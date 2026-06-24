@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --bg-dark: #0a0e17;
+    --bg-darker: #05070a;
+    --primary-blue: #007bff; /* Ajuste se o azul da logo for diferente */
+    --text-main: #f8f9fa;
+    --text-muted: #a0aab2;
+}
+
+body {
+    font-family: 'Geist', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+.text-primary { color: var(--primary-blue) !important; }
+.bg-dark { background-color: var(--bg-dark) !important; }
+.bg-darker { background-color: var(--bg-darker) !important; }
+.text-secondary { color: var(--text-muted) !important; }
+
+.display-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.2;
+}
+.display-title span {
+    color: var(--primary-blue);
+}
+
+.section-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+}
+
+.lead-text {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+}
+
+#main-navbar {
+    transition: background-color 0.4s ease, backdrop-filter 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+    padding: 20px 0;
+    background-color: transparent;
+}
+
+#main-navbar.scrolled {
+    background-color: rgba(10, 14, 23, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 10px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.feature-card {
+    background-color: var(--bg-darker);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-blue);
+}
+
+.float-animation {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.pulse-animation {
+    animation: pulse 4s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.03); }
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: var(--bg-darker);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+}
